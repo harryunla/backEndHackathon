@@ -47,6 +47,9 @@ app.use(middlewares.errorQuinientos);
 
 //servidor
 
+app.get("/", (req,res)=>{
+  res.send("Bienvenido a la Api Equipo 5");
+})
 const server = app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${server.address().port}`)
 })
