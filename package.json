@@ -2,13 +2,14 @@
   "name": "ejapi",
   "version": "1.0.0",
   "description": "ej Api",
-  "main": "main.js",
+  "main": "Server.js",
   "scripts": {
     "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ."
   },
   "keywords": [],
-  "author": "hArrY",
+  "author": "Equipo 5",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.0",
