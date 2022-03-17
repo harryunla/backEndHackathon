@@ -5,7 +5,7 @@ const rutaPersona  = require("./routes/RouteUsuario");
 const rutaLogin  = require("./routes/RouteLogin");
 const rutaLogout  = require('./routes/RouteLogout');
 const middlewares =  require("./middlewares/Middleware");
-const PORT = 8080;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
