@@ -4,7 +4,7 @@ const session = require("express-session");
 const { login } = require("../controller/Login");
 const usuario = require("../model/Usuario");
 const middlewares = require("../middlewares/Middleware");
-const usuarioDAO = require("../data/usuarioDAO");
+const usuarioDAO = require("../data/UsuarioDAO");
 
 
 router.get("/", middlewares.validaId, async (req, res) => {
