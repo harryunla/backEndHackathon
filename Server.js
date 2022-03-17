@@ -38,18 +38,20 @@ app.use('/api/logout',rutaLogout)
 //archivos static
 app.use(express.static(path.join(__dirname,'public')));
 
-// catch 404 and forward to error handler
-app.use(middlewares.errorCuatocientosCuatro);
 
-// error handler
-// define as the last app.use callback
-app.use(middlewares.errorQuinientos);
 
 //servidor
 
 app.get("/", (req,res)=>{
   res.send("Bienvenido a la Api Equipo 5");
-})
+});
+
+
+// catch 404 and forward to error handler
+app.use(middlewares.errorCuatocientosCuatro);
+// error handler
+// define as the last app.use callback
+app.use(middlewares.errorQuinientos);
 const server = app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${server.address().port}`)
 })
