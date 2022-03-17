@@ -23,7 +23,7 @@ function validaLogin(req, res, next) {
     next();
   } 
   else{
-      res.status(406).send({error:"user or password not found"})
+      res.status(406).send({error:"user or password not found"});
   }
 }
 

@@ -1,7 +1,7 @@
 const express = require("express");
 const usuario = require("../model/Usuario");
 const router = express.Router();
-let p = new usuario();
+
 const usuarios = [];
 
 router.get("/", (req, res) => {

@@ -16,8 +16,8 @@ class UsuarioDAO {
     }
     catch(error){
         console.error(error);
-      }
     }
+  }
     
     async logInUsuarioDAO(user, password) 
     {

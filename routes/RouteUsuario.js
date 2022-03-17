@@ -8,8 +8,8 @@ const usuarioDAO = require("../data/usuarioDAO");
 
 
 router.get("/", middlewares.validaId, async (req, res) => {
-  let usuario = await usuario.getusuario(req.query.id);
-  res.status(200).json(usuario);
+  let respuesta = await usuario.getUsuario(req.query.id);
+  res.status(200).json(respuesta);
 
   // if (req.session.usuario) {
   //   if (req.query.id) {
@@ -24,12 +24,5 @@ router.get("/", middlewares.validaId, async (req, res) => {
 });
 
 
-
-//Logout
-
-router.post("/logout", async (req, res) => {
-  usuarios.push(req.query);
-  res.json(req.query);
-});
 
 module.exports = router;
