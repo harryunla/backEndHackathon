@@ -1,26 +1,23 @@
-const UsuarioDAO = require('../data/UsuarioDAO');
+const UsuarioDAO = require("../data/UsuarioDAO");
 const dao = new UsuarioDAO("usuarios");
 
-module.exports = class Usuario{
+module.exports = class Usuario {
+  /**
+   * Make a call from a user to the DAO layer for its id.
+   * @param id
+   * @returns dao.getUsuarioDAO(id)
+   */
+  static async getUsuario(id) {
+    return await dao.getUsuarioDAO(id);
+  }
 
-
-    /**
-     * Metodo que cosnsutla un usuario por id
-     * @param {string} id es el Id a consultar
-     * @returns {object} el usuario
-     */
-    static async getUsuario(id){
-        return await dao.getUsuarioDAO(id);
-    }
-
-    /**
-     * 
-     * @param {string} user usuario a loguear 
-     * @param {*} password passwird del usuario
-     * @returns {object} usuario logueado
-     */
-    static async logInUsuario(user, password){
-        return await dao.logInUsuarioDAO(user,password);
-    }
-
-}
+  /**
+   * Performs a call to the logue function in the DAO layer
+   * @param user
+   * @param password
+   * @returns dao.logInUsuarioDAO(user,password)
+   */
+  static async logInUsuario(user, password) {
+    return await dao.logInUsuarioDAO(user, password);
+  }
+};
