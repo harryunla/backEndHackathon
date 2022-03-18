@@ -16,8 +16,8 @@ router.get("/", async (req, res) => {
 
 router.post("/",middlewares.validaBodyEvento,async  (req, res) => {
 
-  let {descripcionEvento,fechaFin, fechaInicio, idCategoria, imagen,nombreEvento } = req.body;
-  const eventoAux ={descripcionEvento,fechaFin, fechaInicio, idCategoria, imagen,nombreEvento };
+  let {descripcionEvento,fechaFin, fechaInicio, categoria, imagen,nombreEvento, canal } = req.body;
+  const eventoAux ={descripcionEvento,fechaFin, fechaInicio, categoria, imagen,nombreEvento,canal };
 
   let respuesta = await evento.pushEvento(eventoAux);
   respuesta ? res.status(200).json({status:"ok", message:"event add"}) : res.status(409).json({error:"events not add"});
