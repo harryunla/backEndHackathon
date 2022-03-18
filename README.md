@@ -21,7 +21,7 @@ A list of technologies used within the project:
 ***
 A little intro about the installation. 
 ```
-$ git clone git@github.com:harryunla/ejApi.git
+$ git clone git@github.com:harryunla/backEndHackathon.git
 $ cd ../path/to/the/file
 $ npm install
 $ npm start
