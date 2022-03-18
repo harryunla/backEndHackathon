@@ -6,8 +6,8 @@ const consulta = require("../model/Consulta");
 const middlewares = require("../middlewares/Middleware");
 
 
-router.get("/", middlewares.validaId, async (req, res) => {
-  let respuesta = await consulta.getConsultaPorEvento(req.query.id);
+router.get("/:id", async (req, res) => {
+  let respuesta = await consulta.getConsultaPorEvento(req.params.id);
   res.status(200).json(respuesta);
 });
 
