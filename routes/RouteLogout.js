@@ -10,13 +10,6 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
-  //aca insertar usuario nuevo usuario
-});
-
-
-//Logout
-
 router.post("/logout", async (req, res) => {
   usuarios.push(req.query);
   res.json(req.query);
