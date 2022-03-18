@@ -10,6 +10,7 @@ const middlewares = require("../middlewares/Middleware");
 router.get("/:id", async (req, res) => {
   let respuesta = await usuario.getUsuario(req.params.id);
   respuesta.exists ? res.status(200).json(respuesta) : res.status(404).json({error:"user not found"});
+});
 
 
 
