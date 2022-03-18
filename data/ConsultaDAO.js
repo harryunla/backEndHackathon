@@ -1,4 +1,3 @@
-const { add } = require("nodemon/lib/rules");
 const { db } = require("./conector/ConectorFirebase");
 
 class ConsultaDAO {

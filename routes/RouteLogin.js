@@ -6,10 +6,11 @@ const router = express.Router();
 
 
 router.get("/", (req, res) => {
-
 });
 
-//Login
+/**
+ * Metodo Post que efectua el login
+ */
 router.post("/", async (req, res) => {
 
   let respuesta = await usuario.logInUsuario(req.body.user,req.body.password);

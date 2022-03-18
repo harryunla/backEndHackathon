@@ -3,9 +3,8 @@ const session = require('express-session');
 const path = require('path');
 const rutaPersona  = require("./routes/RouteUsuario");
 const rutaLogin  = require("./routes/RouteLogin");
-const rutaLogout  = require('./routes/RouteLogout');
 const rutaEvento = require("./routes/RouteEvento");
-const rutaCOnsulta = require("./routes/RouteConsulta");
+const rutaConsulta = require("./routes/RouteConsulta");
 const middlewares =  require("./middlewares/Middleware");
 const cors = require("cors");
 const corsOptions = { origin: "*", optionSucessStatus: 200 };
@@ -30,9 +29,8 @@ app.use(session({
 //rutas
 app.use('/api/personas',rutaPersona);
 app.use('/api/login',rutaLogin);
-app.use('/api/logout',rutaLogout);
 app.use('/api/eventos',rutaEvento);
-app.use('/api/consultas',rutaCOnsulta);
+app.use('/api/consultas',rutaConsulta);
 
 
 

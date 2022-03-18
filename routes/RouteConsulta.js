@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const session = require("express-session");
-const { login } = require("../controller/Login");
 const consulta = require("../model/Consulta");
 const middlewares = require("../middlewares/Middleware");
 
