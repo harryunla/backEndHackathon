@@ -22,8 +22,8 @@ function validaLogin(req, res, next) {
 }
  function validaBodyEvento(req, res, next){
 
-  let {descripcionEvento,fechaFin, fechaInicio, idCategoria, imagen,nombreEvento, canal } = req.body;
-  if(descripcionEvento && fechaFin && fechaInicio && idCategoria && imagen && nombreEvento && canal){
+  let {descripcionEvento,fechaFin, fechaInicio, categoria, imagen,nombreEvento, canal } = req.body;
+  if(descripcionEvento && fechaFin && fechaInicio && categoria && imagen && nombreEvento && canal){
     next();
   }
   else{
