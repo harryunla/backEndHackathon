@@ -7,11 +7,14 @@ const rutaLogout  = require('./routes/RouteLogout');
 const rutaEvento = require("./routes/RouteEvento");
 const rutaCOnsulta = require("./routes/RouteConsulta");
 const middlewares =  require("./middlewares/Middleware");
+const cors = require("cors");
+const corsOptions = { origin: "*", optionSucessStatus: 200 };
 const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
+app.use(cors(corsOptions));
 
 app.use(session({
     secret: 'laClaveSecreta',
