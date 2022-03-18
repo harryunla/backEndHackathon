@@ -28,6 +28,9 @@ app.use('/api/personas',rutaPersona);
 app.use('/api/login',rutaLogin);
 app.use('/api/logout',rutaLogout);
 app.use('/api/eventos',rutaEvento);
+app.use('/api/consultas',rutaConsulta);
+
+
 //fin rutas
 
 //archivos static
