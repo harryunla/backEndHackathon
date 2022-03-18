@@ -9,22 +9,26 @@ function errorCuatocientosCuatro(req, res, next) {
   next(err);
 }
 
-function validaId(req, res, next) {
-  if (req.query.id) {
-    next();
-  } else {
-    res.status(404).send({ error: "id not found" });
-  }
-}
 
 function validaLogin(req, res, next) {
 
-  if (req.body.user && req.body.password) {
+  let {user, password} = req.body;
+  if (user && password) {
     next();
   } 
   else{
       res.status(406).send({error:"user or password not found"});
   }
 }
+ function validaBodyEvento(req, res, next){
 
-module.exports = { errorQuinientos, errorCuatocientosCuatro, validaId, validaLogin };
+  let {descripcionEvento,fechaFin, fechaInicio, idCategoria, imagen,nombreEvento } = req.body;
+  if(descripcionEvento && fechaFin && fechaInicio && idCategoria && imagen && nombreEvento){
+    next();
+  }
+  else{
+    res.status(406).send({error:"params not found"});
+  }
+ }
+
+module.exports = { errorQuinientos, errorCuatocientosCuatro, validaLogin, validaBodyEvento };

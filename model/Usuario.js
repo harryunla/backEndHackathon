@@ -1,7 +1,7 @@
 const UsuarioDAO = require('../data/UsuarioDAO');
 const dao = new UsuarioDAO("usuarios");
 
-class Usuario{
+module.exports = class Usuario{
 
 
     static async getUsuario(id){
@@ -12,6 +12,4 @@ class Usuario{
         return await dao.logInUsuarioDAO(user,password);
     }
 
-
 }
-module.exports =  Usuario;

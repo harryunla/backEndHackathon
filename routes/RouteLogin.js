@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 });
 
 //Login
-router.post("/",middlewares.validaLogin, async (req, res) => {
+router.post("/", async (req, res) => {
 
   let respuesta = await usuario.logInUsuario(req.body.user,req.body.password);
   res.status(200).json(respuesta);

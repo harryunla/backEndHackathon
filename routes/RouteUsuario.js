@@ -4,12 +4,12 @@ const session = require("express-session");
 const { login } = require("../controller/Login");
 const usuario = require("../model/Usuario");
 const middlewares = require("../middlewares/Middleware");
-const usuarioDAO = require("../data/UsuarioDAO");
 
 
-router.get("/", middlewares.validaId, async (req, res) => {
-  let respuesta = await usuario.getUsuario(req.query.id);
-  res.status(200).json(respuesta);
+
+router.get("/:id", async (req, res) => {
+  let respuesta = await usuario.getUsuario(req.params.id);
+  respuesta.exists ? res.status(200).json(respuesta) : res.status(404).json({error:"user not found"});
 
   // if (req.session.usuario) {
   //   if (req.query.id) {

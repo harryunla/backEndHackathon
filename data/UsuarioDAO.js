@@ -2,7 +2,7 @@ const { db } = require("./conector/ConectorFirebase");
 // return await (await db.collection(this.#tabla).where("nombre", "==", "Alejandro").get()).docs;
 
 
-class UsuarioDAO {
+module.exports = class UsuarioDAO {
 
   #tabla;
   constructor(tabla){
@@ -34,4 +34,4 @@ class UsuarioDAO {
       }
   }
 }
-module.exports = UsuarioDAO;
+
