@@ -27,8 +27,8 @@ router.post("/",middlewares.validaBodyEvento,async  (req, res) => {
 router.put("/:id",middlewares.validaBodyEvento,async  (req, res) => {
 
   let {id} = req.params;
-  let {descripcionEvento,fechaFin, fechaInicio, idCategoria, imagen,nombreEvento } = req.body;
-  const eventoAux ={descripcionEvento,fechaFin, fechaInicio, idCategoria, imagen,nombreEvento };
+  let {descripcionEvento,fechaFin, fechaInicio, categoria, imagen,nombreEvento, canal } = req.body;
+  const eventoAux ={descripcionEvento,fechaFin, fechaInicio, categoria, imagen,nombreEvento,canal };
   let respuesta = await evento.editEvento(id,eventoAux);
   respuesta ? res.status(200).json({status:"ok", message:"event edit"}) : res.status(409).json({error:"events not changed"});
     
